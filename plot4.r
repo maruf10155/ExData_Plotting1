@@ -14,7 +14,7 @@ plot(a1$timedate,a1$Voltage,ylab = "Voltage",type = "s",xlab = "datetime") # 2nd
 with(a1,plot(timedate,Sub_metering_1,xlab=" ",ylab="Energy sub metering",type="s")) # 3rd plot 
 with(a1,lines(timedate, Sub_metering_2,col="red"))
 with(a1,lines(timedate, Sub_metering_3,col="blue"))
-legend("topright",col=c("black","red","blue"),lty="solid",
+legend("topright",col=c("black","red","blue"),lty=c(1,1,1),
 legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 plot(a1$timedate,a1$Global_reactive_power,xlab = "datetime",type="s",ylab = "Global_reactive_power") # 4th plot
 dev.copy(png, width=480, height=480, file = "plot4.png") # copy to a device
