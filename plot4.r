@@ -7,6 +7,7 @@ a1=filter(a,dmy(Date)=="2007-02-01"|dmy(Date)=="2007-02-02") # subsetting the re
 setwd("ExData_Plotting1") # set working directory
 a2=dmy(a1$Date)+hms(a1$Time)
 a1$timedate=a2 # creating a column
+png(filename = "plot4.png",width = 480,height = 480) # open a device
 par("mfrow"=c(2,2)) # show 4 plots in one device
 # plotting 4 plots 
 plot(a1$timedate,a1$Global_active_power,ylab = "Global Active Power",type = "s",xlab = " ") # 1st plot
@@ -17,5 +18,4 @@ with(a1,lines(timedate, Sub_metering_3,col="blue"))
 legend("topright",col=c("black","red","blue"),lty=c(1,1,1),
 legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 plot(a1$timedate,a1$Global_reactive_power,xlab = "datetime",type="s",ylab = "Global_reactive_power") # 4th plot
-dev.copy(png, width=480, height=480, file = "plot4.png") # copy to a device
 dev.off() # closing the device
