@@ -12,7 +12,7 @@ par("mfrow"=c(2,2)) # show 4 plots in one device
 # plotting 4 plots 
 plot(a1$timedate,a1$Global_active_power,ylab = "Global Active Power",type = "s",xlab = " ") # 1st plot
 plot(a1$timedate,a1$Voltage,ylab = "Voltage",type = "s",xlab = "datetime") # 2nd plot
-with(a1,plot(timedate,Sub_metering_1,xlab=" ",ylab="Energy sub metering",type="s")) # 3rd plot 
+with(a1,plot(timedate,Sub_metering_1,xlab=" ",ylab="Energy sub metering",type="s",xlab="")) # 3rd plot 
 with(a1,lines(timedate, Sub_metering_2,col="red"))
 with(a1,lines(timedate, Sub_metering_3,col="blue"))
 legend("topright",col=c("black","red","blue"),lty=c(1,1,1),
